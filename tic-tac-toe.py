@@ -15,9 +15,8 @@ def shapeDraw(shape, regionCode):
         row = regionCode[0]
         col = regionCode[1]
         matrix[row][col] = shape
-        # print(matrix)
 
-        # draw
+        # draw "X" for player 2
         turtle.pu()
         turtle.color('Blue')
         turtle.setposition(-200 + col * 160, 110 - row * 160)
@@ -35,15 +34,14 @@ def shapeDraw(shape, regionCode):
         turtle.color('Black')
 
         matrixCheck()
-
+    
     elif shape == 'o':
         row = regionCode[0]
         col = regionCode[1]
 
         matrix[row][col] = shape
-        # print(matrix)
 
-        # draw
+        # draw "O" for player 1
         turtle.pu()
         turtle.color('Red')
         turtle.setposition(-160 + col * 160, 110 - row * 160)
@@ -55,6 +53,7 @@ def shapeDraw(shape, regionCode):
         matrixCheck()
 
 
+# checks the matrix for win of any player
 def matrixCheck():
     flag = 0
     possibleWin = []
@@ -119,6 +118,7 @@ def matrixCheck():
             drawLine(x1, y1, x2, y2, index)
 
 
+# drawing the line through the grid where [O O O] or [X X X] has been found in any direction: row or column or diagonal
 def drawLine(x1, y1, x2, y2, index):
     turtle.pencolor('black')
     turtle.pensize(10)
@@ -146,14 +146,19 @@ def drawLine(x1, y1, x2, y2, index):
     new()
 
 
+# events to occur when any trigger is pressed
+# (in this case a mouse-click is termed as a trigger)
 def buttonClick(x, y):
     # print(x, y)
     global count
 
+    # when game has not yet started
+    # (Refers to the starting window where "PLAY" and "QUIT" options pop up)
     if state == 'notRunning':
         if -130 < x < -30 and -20 < y < 20:
             start()
 
+    # after the game has been started
     elif state == 'running':
         if 86 <= y <= 235:
             if -234 <= x <= -85:
@@ -213,16 +218,17 @@ def buttonClick(x, y):
                     count += 1
                     draw(regionCode)
 
-        # print(checkCountList)
 
+    # event to occur if "QUIT" has been triggered
+    # (this will automatically close the turtle window)
     if state == 'notRunning':
         if 20 < x < 120 and -20 < y < 20:
             turtle.clear()
             turtle.bye()
 
 
+# sets the page after "PLAY" has been choosed from the main screen
 def start():
-    turtle.setup(500, 500)
     turtle.pensize(10)
     turtle.hideturtle()
 
@@ -239,7 +245,7 @@ def start():
 
     global checkCountList
     checkCountList = []
-
+    # draw the 3X3 grid or match board
     turtle.speed(0)
     for i in range(1, 3):
         turtle.pu()
@@ -260,6 +266,7 @@ def start():
     turtle.listen()
 
 
+# sets up the first page where "PLAY" and "QUIT" options occurs
 def new():
     turtle.setup(500, 500)
     turtle.speed(0)
@@ -300,11 +307,12 @@ def new():
     turtle.onscreenclick(buttonClick, 1)
 
 
+# main function
 if __name__ == '__main__':
     import turtle
     import time
     turtle.title("Tic Tac Toe")
-    turtle.Screen().bgpic("C:\\Users\\Lenovo\\Desktop\\wall\\tile.gif")
+    turtle.Screen().bgpic("C:\\Users\\Lenovo\\Desktop\\wall\\tile.gif") # sets up the background image of the game
 
     new()
     turtle.mainloop()

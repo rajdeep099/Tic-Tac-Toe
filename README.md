@@ -14,6 +14,6 @@ A basic Tic Tac Toe game by using `turtle` module in `python3`
   4. Choose (with a simple left mouse click) the appropriate region on 3X3 game board to win the game.
   
   ## Images
-![MAIN SCREEN](https://raw.githubusercontent.com/rajdeep099/Tic-Tac-Toe/master/game.png)
-![GAME SCREEN](https://raw.githubusercontent.com/rajdeep099/Tic-Tac-Toe/master/win.png)  
+![MAIN SCREEN](https://raw.githubusercontent.com/rajdeep099/Tic-Tac-Toe/master/main_screen.png)
+![GAME SCREEN](https://raw.githubusercontent.com/rajdeep099/Tic-Tac-Toe/master/game_ui.png)  
 ![WIN](https://raw.githubusercontent.com/rajdeep099/Tic-Tac-Toe/master/win.png)

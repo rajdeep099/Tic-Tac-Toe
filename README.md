@@ -17,3 +17,4 @@ A basic Tic Tac Toe game by using `turtle` module in `python3`
 ![MAIN SCREEN](https://raw.githubusercontent.com/rajdeep099/Tic-Tac-Toe/master/main_screen.png)
 ![GAME SCREEN](https://raw.githubusercontent.com/rajdeep099/Tic-Tac-Toe/master/game_ui.png)  
 ![WIN](https://raw.githubusercontent.com/rajdeep099/Tic-Tac-Toe/master/win.png)
+![GAME SCREEN](https://raw.githubusercontent.com/rajdeep099/Tic-Tac-Toe/master/scoreCard.png)  
